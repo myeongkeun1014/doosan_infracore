@@ -8,6 +8,10 @@ const mode = process.env.NODE_ENV === 'production' ? 'production' : 'development
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const cssnano = require('cssnano');
 
 const generateHTMLPlugins = () => glob.sync('./src/**/*.html').map(
   dir => new HtmlWebpackPlugin({
@@ -20,6 +24,7 @@ const commonWebpackConfig = () => ({
   mode,
   output: {
     path: path.resolve(__dirname, 'dist'),
+    publicPath: './',
     filename: 'bundle.js',
   },
   entry: ['./src/js/index.js', './src/scss/index.scss'],
