@@ -13,6 +13,11 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const cssnano = require('cssnano');
 
+
+
+
+const publicPath = mode === 'production' ? 'https://myeongkeun1014.github.io/doosan_infracore/' : '';
+
 const generateHTMLPlugins = () => glob.sync('./src/**/*.html').map(
   dir => new HtmlWebpackPlugin({
     filename: path.basename(dir),
@@ -24,7 +29,7 @@ const commonWebpackConfig = () => ({
   mode,
   output: {
     path: path.resolve(__dirname, 'dist'),
-    publicPath: './',
+    publicPath,
     filename: 'bundle.js',
   },
   entry: ['./src/js/index.js', './src/scss/index.scss'],
@@ -65,7 +70,7 @@ const commonWebpackConfig = () => ({
     new CopyWebpackPlugin([
       {
         from: './src/static/',
-        to: './static',
+        to: 'static/',
       }
     ]),
     ...generateHTMLPlugins(),
@@ -87,7 +92,18 @@ const developmentConfig = () => ({
     rules: [
       {
         test: /\.(sass|scss)$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+        use: [
+          'style-loader',
+          'css-loader',
+          'postcss-loader',
+          'resolve-url-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              prependData: `$publicPath: '${publicPath}';`
+            },
+          },
+        ],
       }
     ],
   },
@@ -107,8 +123,14 @@ const productionConfig = () => ({
             loader: MiniCssExtractPlugin.loader,
           },
           'css-loader',
+          'resolve-url-loader',
           'postcss-loader',
-          'sass-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              prependData: `$publicPath: '${publicPath}';`
+            },
+          },
         ],
       },
     ],

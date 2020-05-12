@@ -22,7 +22,7 @@
         display: inline-block;
         width: 105px;
         height: 50px;
-        background-image: url("/static/images/logo/logo-doosan.png");
+        background-image: url("#{$publicPath}/static/images/logo/logo-doosan.png");
         background-size: cover;
 
         @include mobile {
@@ -151,13 +151,13 @@
       display: inline-block;
       width: 20px;
       height: 20px;
-      background-image: url("/static/images/icon/icon-search.png");
+      background-image: url("#{$publicPath}/static/images/icon/icon-search.png");
       background-size: cover;
       cursor: pointer;
       
       @include tablet { display: none; }
       &.active {
-        background-image: url("/static/images/icon/icon-close.png");
+        background-image: url("#{$publicPath}/static/images/icon/icon-close.png");
       }
 
     }
@@ -166,7 +166,7 @@
       display: inline-block;
       width: 20px;
       height: 20px;
-      background-image: url("/static/images/icon/icon-global.png");
+      background-image: url("#{$publicPath}/static/images/icon/icon-global.png");
       background-size: cover;
     }
   }

@@ -4,6 +4,7 @@ $screen-default: 900px;
 $screen-small: 600px;
 
 
+
 @mixin clear {
   &::after {
     display: block;

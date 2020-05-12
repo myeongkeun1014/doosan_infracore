@@ -133,7 +133,7 @@
         width: 56px;
         height: 56px;
         background-color: white;
-        background-image: url('/static/images/icon/arrow_right.svg');
+        background-image: url('#{$publicPath}/static/images/icon/arrow_right.svg');
         background-position: center;
         background-repeat: no-repeat;
         background-size: 16px 16px;
@@ -276,10 +276,10 @@
       display: inline-block;
     }
     .start {
-      background-image: url('/static/images/icon/arrow_play.svg');
+      background-image: url('#{$publicPath}/static/images/icon/arrow_play.svg');
     }
     .stop {
-      background-image: url('/static/images/icon/arrow_purse.svg');
+      background-image: url('#{$publicPath}/static/images/icon/arrow_purse.svg');
     }
   }
 }
