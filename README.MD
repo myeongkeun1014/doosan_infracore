@@ -11,3 +11,5 @@ yarn start // or npm start
 #### 사용한 스킬
 `sass`, `webpack`, `jquery`, `RxJS`, `Slick`  
 
+#### Demo
+[Github pages](https://myeongkeun1014.github.io/doosan_infracore/)
