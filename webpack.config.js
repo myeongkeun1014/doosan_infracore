@@ -60,7 +60,7 @@ const commonWebpackConfig = () => ({
     new CopyWebpackPlugin([
       {
         from: './src/static/',
-        to: './static,',
+        to: './static',
       }
     ]),
     ...generateHTMLPlugins(),
