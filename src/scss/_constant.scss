@@ -1,0 +1,14 @@
+$screen-large: 1500px;
+$screen-medium: 1100px;
+$screen-default: 900px;
+$screen-small: 600px;
+
+
+@mixin clear {
+  &::after {
+    display: block;
+    clear: both;
+    content: '';
+  }
+}
+

@@ -1,0 +1,199 @@
+.section_forth {
+  @include dividerPadding(6.875rem, 6.875rem);
+  
+  max-width: 1632px;
+  margin: 0 auto;
+  &::after {
+    clear: both;
+    content: '';
+    display: block;
+  }
+  .partners {
+    padding: 0 1.5rem;
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    > h1 { font-size: 3.125rem; line-height: 4rem; margin-bottom: 3.5rem; font-weight: 700;
+      @include mobile { font-size: 2rem; line-height: 2.2rem; margin-bottom: 2rem; }
+    }
+    > p { font-size: 1.125rem; line-height: 2rem;
+      @include mobile { line-height: 1.75rem; margin-bottom: 1rem; }
+    }
+
+    .description {
+      background-color: #f0f0f0;
+      height: 322px;
+      padding: 5rem 3rem;
+      box-sizing: border-box;
+      position: relative;
+      .text {
+        h2 { font-size: 1.125rem; margin-bottom: 40px; font-weight: 700; }
+        p { 
+          font-size: 1.125rem;
+          line-height: 1.5rem;
+          color: #aaa;
+          span { color: black; font-weight: 700; }
+        }
+      }
+    }
+  }
+
+  .view_more {
+    margin: 3.5rem 0;
+    will-change: width, opacity;
+    transition: width .5s, opacity 1s;
+    opacity: 1;
+    width: 56px;
+    height: 56px;
+
+    text-align: center;
+
+    border: 1px solid #bcbcbc;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      width: 160px;
+      .view_more_text {
+        width: 80px;
+        color: #333;
+        padding: 0 0 0 20px;
+      }
+    }
+    
+    .view_more_text {
+      display: inline-block;
+      height: 56px;
+
+      background-color: white;
+      line-height: 56px;
+
+      overflow: hidden;
+      
+      will-change: width, padding, color;
+      transition: width .3s, padding .3s, color .3s;
+      color: #fff;
+      width: 0;
+      padding: 0;
+      height: 56px;
+
+    }
+    .view_more_arrow {
+      display: inline-block;
+      justify-items: flex-end;
+      width: 56px;
+      height: 56px;
+      background-color: white;
+      background-image: url('/static/images/icon/arrow_right.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 16px 16px;
+    }
+  }
+
+
+  .graph {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 322px;
+    width: 50%;
+    color: #aaa;
+
+    .y_axis {
+      position: absolute;
+      &::after {
+        content: '';
+        position: absolute;
+        left: 70px;
+        top: 8px;
+        width: 200px;
+        height: 1px;
+        background-color: #fff;
+        z-index: 1;
+
+        @include mobile { left: 55px; width: 100px; }
+      }
+      &:nth-child(1) { top: 100px; }
+      &:nth-child(2) { top: 150px; }
+      &:nth-child(3) { top: 200px; }
+    }
+
+    .x_axis {
+      position: absolute;
+      top: 225px;
+      &::after {
+        z-index: 2;
+        content: '';
+        position: absolute;
+        width: 40px;
+        left: 0px;
+        bottom: 33px;
+        @include mobile { width: 20px; bottom: 28px; }
+      }
+      &:nth-child(4) { left: 100px; &::after { height: 75px; background-color: #c8c8c8; }
+        @include mobile { left: 70px; }
+      }
+      &:nth-child(5) { left: 200px; &::after { height: 125px; background-color: #222; }
+        @include mobile { left: 120px; }
+      }
+    }
+    .y2018 {
+      position: absolute;
+      top: 110px;
+      left: 97px;
+
+      @include mobile { left: 67px; }
+    }
+
+    .y2019 {
+      position: absolute;
+      top: 60px;
+      left: 197px;
+
+      @include mobile { left: 117px; }
+    }
+  }
+
+
+  .communication {
+    padding: 0 1.5rem;
+    float: right;
+    width: 50%;
+    box-sizing: border-box;
+
+    @include mobile {
+      padding-bottom: 6.875rem;
+    }
+
+    > h1 { font-size: 3.125rem; line-height: 4rem; margin-bottom: 56px; font-weight: 700;
+      @include mobile { font-size: 2rem; line-height: 2.2rem; margin-bottom: 2rem; }
+    }
+    > p { font-size: 1.125rem; line-height: 2rem;
+      @include mobile { line-height: 1.75rem; margin-bottom: 1rem; }
+    }
+
+    .description {
+      height: 322px;
+      box-sizing: border-box;
+      background-image: url("/static/images/communication-description.jpeg");
+      background-size: cover;
+      background-repeat: no-repeat;
+
+    }
+  }
+
+
+  @media screen and (max-width: 1300px) {
+    .partners {
+      width: 100%;
+      padding-bottom: 100px;
+    }
+
+    .communication {
+      width: 100%;
+    }
+  }
+}

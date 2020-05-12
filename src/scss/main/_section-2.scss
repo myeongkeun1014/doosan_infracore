@@ -1,0 +1,187 @@
+.doosan_description {
+  // height: 760px;
+  display : block;
+  position: relative;
+  box-sizing: border-box;
+  @include dividerPadding(6.875rem, 6.875rem);
+  @include mobile { padding: 0 0 6.875rem 0; };
+
+  .slick_container .items { height: 760px; }
+  .slick_container .item {
+    height: 760px;
+    width: 100%;
+    padding: 200px 0 0 0;
+    box-sizing: border-box;
+
+    background-color: rgba(0, 0, 0, 0.3);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    font-size: 0;
+    display: relative;
+    color: white; 
+    
+    display: flex;
+    align-items: flex-start;
+    @include tablet {
+      display: block;
+      padding: 8rem 0 0 ;
+    }
+
+    h1 { font-size: 3.5rem; padding-left: 8.75rem; box-sizing: border-box; line-height: 4rem; font-weight: 700;
+      @include tablet { padding-left: 2rem; }
+    }
+    p { font-size: 1.125rem; line-height: 2rem;
+      @include tablet { padding-left: 2rem; padding-top: 4rem; }
+    }
+
+    h1, p { display: inline-block; width: 50%;
+      @include tablet { display: block; width: 100%; box-sizing: border-box; }
+    }
+
+    .view_more { 
+      position: absolute;
+      font-size: 1rem;
+      right: 50%;
+      top: 430px;
+      transform: translateX(100%);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include tablet {
+        position: initial;
+        display: inline-block;
+        transform: translateX(0);
+        justify-content: flex-start;
+        margin-left: 2rem;
+        padding-top: 4rem;
+
+      }
+
+      .view_more_arrow {
+        position: relative;
+        left: 0px;
+
+        display: inline-block;
+        width: 1rem;
+        height: 1rem;
+        padding: 0 5px;
+
+        transition: left .5s;
+        will-change: left;
+        
+        svg { height: 1rem; }
+      }
+
+      &::after {
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0%;
+        height: 1px;
+        content: '';
+        background-color: white;
+
+        transition: width .5s;
+        will-change: width;
+
+      }
+
+      &:hover {
+        .view_more_arrow { left: 10px; }
+        &::after {
+          width: calc(100% + 10px);
+        }
+      }
+    }
+
+    &:nth-child(1) { background-image: url("/static/images/doosan-description-1.jpeg"); }
+    &:nth-child(2) { background-image: url("/static/images/doosan-description-2.png"); }
+    &:nth-child(3) { background-image: url("/static/images/doosan-description-3.png"); }
+  }
+
+  .slick_container {
+    position: relative;
+  }
+
+  .slick_container .arrow_navigation {
+    position: absolute;
+    top: 430px;
+    left: 8.75rem;
+    height: 58px;
+
+    @include tablet {
+      left: 2rem;
+      top: 480px;
+    }
+    
+    .prev, .next {
+      position: relative;
+      margin-right: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(255, 255, 255, 0);
+
+      width: 56px;
+      height: 56px;
+      border: 1px solid rgba(255, 255, 255, .3);
+
+      transition: background-color .5s;
+      will-change: background-color;
+      @include tablet {
+        width: 40px;
+        height: 40px;
+      }
+      svg {
+        height: 22px;
+        position: relative;
+        left: 0;
+        
+        transition: left .5s;
+        will-change: left;
+
+        @include tablet {
+          height: 16px;
+        }
+      }
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 1);
+        svg path { stroke: black; }
+      }
+    }
+    .prev:hover svg { left: -8px; }
+    .next:hover svg { left: 8px; }
+  }
+
+  .button_navigation {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    bottom: 0;
+    right: 0;
+  
+    height: 120px;
+    width: 50%;
+    background-color: white;
+    padding: 0 60px;
+    box-sizing: border-box;
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      background-color: #dedede;
+      margin-right: 15px;
+
+      transition: background-color .5s;
+      will-change: background-color;
+
+      &.active { background-color: black; }
+    }
+  }
+}

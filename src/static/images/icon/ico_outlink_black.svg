@@ -1,0 +1,18 @@
+<svg id="icon_outlink" data-name="icon outlink" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #222;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M4,0V1H0V0H4Z"/>
+  <path id="Shape_1316_copy" data-name="Shape 1316 copy" class="cls-1" d="M16,0V1H7V0h9Z"/>
+  <path id="Shape_1316_copy_4" data-name="Shape 1316 copy 4" class="cls-1" d="M16,15v1H0V15H16Z"/>
+  <path id="Shape_1316_copy_2" data-name="Shape 1316 copy 2" class="cls-1" d="M16,0V9H15V0"/>
+  <path id="Shape_1316_copy_6" data-name="Shape 1316 copy 6" class="cls-1" d="M15.036,1.672L7.672,9.036,6.964,8.328l7.364-7.364"/>
+  <path id="Shape_1316_copy_7" data-name="Shape 1316 copy 7" class="cls-1" d="M15.036,1.672L7.672,9.036,6.964,8.328l7.364-7.364"/>
+  <path id="Shape_1316_copy_5" data-name="Shape 1316 copy 5" class="cls-1" d="M1,0V16H0V0"/>
+  <path id="Shape_1316_copy_3" data-name="Shape 1316 copy 3" class="cls-1" d="M16,12v4H15V12"/>
+</svg>

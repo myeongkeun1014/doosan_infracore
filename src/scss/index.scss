@@ -1,0 +1,41 @@
+@import "constant";
+@import "reset";
+@import "font";
+@import "responsive";
+
+
+@import "main/main_slider";
+@import "main/navigation";
+@import "main/section-1";
+@import "main/section-2";
+@import "main/section-3";
+@import "main/section-4";
+@import "main/bottom-nav";
+
+body {
+  font-family: "SDGothic", sans-serif;
+}
+
+.font_plain {
+  font-family: Plain, 'SD Gothic Neo', sans-serif;
+}
+
+.font_sd {
+  font-family: "SDGothic", sans-serif;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+@media screen and (max-width: $screen-large) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: $screen-medium) {
+  html {
+    font-size: 12px;
+  }
+}

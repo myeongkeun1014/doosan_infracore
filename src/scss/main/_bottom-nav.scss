@@ -1,0 +1,230 @@
+footer {
+  background-color: #f2f2f2;
+  nav.footer_link {
+    @include dividerPadding(5rem, 1.875rem);
+    display: flex;
+
+    .items {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 5rem;
+
+      h1 {
+        font-weight: 700;
+        font-size: 1rem;
+        margin-bottom: 26px;        
+      }
+
+      a {
+        color: #333;
+        margin-bottom: 16px;
+        text-decoration: none;
+      }
+    }
+
+    @include tablet { display: none; }
+  }
+
+  nav.description_nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include dividerPadding(5rem, 1.875rem);
+
+    @include clear;
+    @include tablet { display: block; }
+
+    .left {
+      @include tablet { @include dividerPadding(20px, 20px) }
+      @include mobile { padding: { top: 2rem; bottom: 6rem; left: 1rem; right: 1rem; }}
+      a {
+        display: inline-block;
+        line-height: 1.5rem;
+        margin-right: 1.75rem;
+        text-decoration: none;
+        color: #333;
+
+        @include tablet { padding: 5px; }
+        @include mobile { padding: 8px; }
+
+        img {
+          height: 14px;
+        }
+        .down.ico {
+          height: 13px;
+        }
+      }
+
+    }
+
+    .right {
+      float: right;
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      @include tablet {
+        @include dividerPadding(20px, 20px);
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .icon {
+        font-size: 0;
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+        background-size: auto 20px;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        &:nth-child(1) { background-image: url("/static/images/icon/icon-facebook.png"); }
+        &:nth-child(2) { background-image: url("/static/images/icon/icon-instagram.png"); }
+        &:nth-child(3) { background-image: url("/static/images/icon/icon-linkedin.png"); }
+      }
+      .sites {
+        display: flex;
+        align-items: center;
+        border: 1px solid #666;
+        margin: 0 0 0 30px;
+        height: 50px;
+        width: 224px;
+
+        position: relative;
+        box-sizing: border-box;
+
+        transition: background-color .5s;
+        will-change: background-color;
+
+        cursor: pointer;
+
+        @include tablet {
+          position: absolute;
+          right: 1rem;
+        }
+
+        &:hover {
+          background-color: #fff;
+        }
+        
+        &::after {
+          content: '';
+
+          position: absolute;
+          display: inline-block;
+          width: 13px;
+          height: 13px;
+          border: {
+            top: 1px solid #000;
+            left: 1px solid #000;
+          }
+
+          transform: rotate(45deg);
+          transition: transform .5s, top .5s;
+          will-change: transform, top;
+
+          right: 20px;
+          top: 22px;
+        }
+        &.active::after {
+           transform: rotate(-135deg);
+           top: 17px;
+        }
+
+        .selected {
+          padding: 0 24px;
+        }
+      }
+  
+      .sites_select_box {
+        $border-property: 1px solid #666; 
+        position: absolute;
+        bottom: 49px;
+        right: 0;
+        width: 224px;
+        box-sizing: border-box;
+
+        border: {
+          left: $border-property;
+          right: $border-property;
+          top: $border-property;
+          bottom: 0;
+        }
+        
+        max-height: 0;
+        overflow: hidden;
+
+        will-change: max-height, border-color;
+        transition: max-height .5s, border-color .5s;
+
+
+        @include tablet {
+          right: 1rem;
+          bottom: 64px;
+          background-color: #f2f2f2;
+        }
+
+        @include mobile { 
+          bottom: 44px;
+        }
+
+        &.active {
+          max-height: 250px;
+          border: {
+            bottom: 1px solid transparent;
+            top: $border-property;
+            left: $border-property;
+            right: $border-property;
+          }
+        }
+        > p {
+          height: 3.125rem;
+          line-height: 3.125rem;
+          padding: 0 24px;
+
+          transition: background-color .5s;
+          will-change: background-color;
+          
+          cursor: pointer;
+          &:hover {
+            background-color: #fff;
+          }
+
+        }
+      }
+    }
+  }
+
+  .division {
+    border-bottom: 1px solid #d9d9d9;
+
+    @include dividerMargin(3.125rem, 0);
+    @include tablet { @include dividerMargin; }
+    @include mobile { padding: { top: 2rem; bottom: 2rem; }}
+  }
+
+  nav.bottom_nav {
+    @include dividerPadding(3.125rem, 3.125rem);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo {
+      font-size: 0;
+      @include mobile { padding: 10px; }
+      a {
+        display: inline-block;
+        width: 120px;
+        height: 57px;
+        background-image: url(/static/images/logo/logo-doosan.png);
+        background-size: cover;
+
+        @include mobile {
+          width: 80px;
+          height: 38px;
+        }
+      }
+    }
+  }
+
+}

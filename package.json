@@ -1,0 +1,38 @@
+{
+  "name": "doosan-infra-core",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server --config webpack.config.js"
+  },
+  "keywords": [],
+  "author": "Myeongkeun Park",
+  "email": "myeongkeun.park@gamil.com",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=12.15.0",
+    "npm": ">=6.13.7"
+  },
+  "dependencies": {
+    "node-sass": "^4.13.1",
+    "rxjs": "^6.5.5",
+    "sass-loader": "^8.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "autoprefixer": "^9.7.4",
+    "babel-loader": "^8.0.6",
+    "copy-webpack-plugin": "^5.1.1",
+    "css-loader": "^3.4.2",
+    "html-webpack-plugin": "^3.2.0",
+    "postcss-loader": "^3.0.0",
+    "raw-loader": "^4.0.0",
+    "style-loader": "^1.1.3",
+    "webpack": "^4.41.6",
+    "webpack-cli": "3.3.10",
+    "webpack-dev-server": "^3.10.3",
+    "webpack-merge": "^4.2.2"
+  }
+}

@@ -1,0 +1,288 @@
+.middle_navigation {
+  height: 110px;
+  position: relative;
+
+  @include mobile { height: 60px; }
+
+  > header {
+    display: flex;
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid #e5e5e5;
+    background-color: white;
+
+    z-index: 50;
+    .logo {
+      position: absolute;
+      display: inline-block;
+      padding: 30px 35px;
+      font-size: 0;
+      @include mobile { padding: 10px; }
+      a {
+        display: inline-block;
+        width: 105px;
+        height: 50px;
+        background-image: url("/static/images/logo/logo-doosan.png");
+        background-size: cover;
+
+        @include mobile {
+          width: 80px;
+          height: 38px;
+        }
+      }
+    }
+  
+    .navigation_list {
+      align-self: center;
+      flex-grow: 1;
+
+      display: flex;
+      justify-content: center;
+      > .item {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 1.25rem;
+        width: 10rem;
+        height: 110px;
+        text-align: center;
+        cursor: pointer;
+        box-sizing: border-box;
+
+        @include tablet { display: none; }
+        &::after {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background-color: #000;
+
+          will-change: width;
+          transition: width .25s;
+        }
+        &.active::after {
+          width: 100%;
+        }
+  
+      }
+    }
+  }
+
+  > aside {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 50;
+
+    height: 110px;
+    padding: 1.875rem 2.25rem 1.875rem 0;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-sizing: border-box;
+
+    @include mobile {
+      height: 60px;
+    }
+
+    .i18n {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      font-size: 0.875rem;
+      position: relative;
+
+      > p {
+        padding: 0 4px;
+      }
+
+      .select_wrap {
+        position: absolute;
+        display: none;
+        top: -11px;
+        left: -14px;
+
+        @include tablet {
+          left: calc(-50% - 10px);
+        }
+        &.active {
+          display: block;
+        }
+        > p {
+          text-align: center;
+          font-size: 0.875rem;
+          padding: 13px 16px;
+          border: 1px solid black;
+          width: 80px;
+          border-bottom: 0;
+          background-color: #fff;
+          
+          will-change: color, background-color;
+          transition: color .25s, background-color .25s;
+
+          &:hover {
+            color: #fff;
+            background-color: #333;
+          }
+          &:last-child {
+            border-bottom: 1px solid black;
+          }
+        }
+      }
+    }
+
+    .division {
+      display: inline-block;
+      margin: 0 16px 0 12px;
+      height: 16px;
+      width: 1px;
+      background-color: #333;
+
+      @include tablet { display: none; }
+    }
+
+    .search {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-image: url("/static/images/icon/icon-search.png");
+      background-size: cover;
+      cursor: pointer;
+      
+      @include tablet { display: none; }
+      &.active {
+        background-image: url("/static/images/icon/icon-close.png");
+      }
+
+    }
+
+    .earth.icon {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-image: url("/static/images/icon/icon-global.png");
+      background-size: cover;
+    }
+  }
+
+  > section.hover_navigation_container {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+
+    z-index: 40;
+    min-height: 300px;
+
+    background-color: #fff;
+    
+    width: 100%;
+    justify-content: center;
+
+    box-sizing: border-box;
+    transition: top 1s, bottom 1s;
+
+    @include tablet { display: none; }
+
+    &.active {
+      bottom: -300px;
+    }
+
+    > .item_wrap {
+      padding: 30px 0;
+      width: 10rem;
+      text-align: center;
+      border-left: 1px solid #e5e5e5;
+      &:last-child {
+        border-right: 1px solid #e5e5e5;
+      }
+      > .item {
+        padding: 12px 0;
+
+        &:hover span::after {
+          width: 100%;
+        }
+        
+        > span {
+          position: relative;
+          &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 1px;
+            background-color: #000;
+  
+            will-change: width;
+            transition: width .75s;
+          }
+        }
+      }
+    }
+  }
+
+  > .search_wrap {
+    position: absolute;
+    
+    display: flex;
+    z-index: 49;
+    top: 110px;
+    width: 100%;
+    height: 140px;
+    left: -100%;
+    background-color: white;
+
+    padding: 0 8.75rem;
+    box-sizing: border-box;
+
+    will-change: left;
+    transition: left 1s;
+
+    
+    &.active {
+      left: 0;
+    }
+
+    input {
+      font-size: 2rem;
+      border: 0;
+      height: 100%;
+      width: 100%;
+      padding: 0;
+    }
+
+    button {
+      border: 0;
+      padding: 0;
+      margin: 0;
+      background: none;
+      width: 27px;
+    }
+  }
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+  z-index: -1;
+
+  will-change: opacity;
+  transition: opacity 1s;
+
+  &.active {
+    opacity: 1;
+    z-index: 1;
+  }
+  background-color: rgba(0, 0, 0, .6);
+}

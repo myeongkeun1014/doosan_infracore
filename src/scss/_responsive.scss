@@ -1,0 +1,98 @@
+@mixin dividerPadding($top-padding: 0px, $bottom-padding: 0px) {
+  padding: {
+    left: 6.875rem;
+    right: 6.875rem;
+    bottom: $bottom-padding;
+    top: $top-padding;
+  }
+
+  @media screen and (max-width: #{$screen-large}) {
+    padding: {
+      left: 6.875rem;
+      right: 6.875rem;
+      bottom: $bottom-padding;
+      top: $top-padding;
+    }
+  }
+
+  @media screen and (max-width: #{$screen-medium}) {
+    padding: {
+      left: 3.5rem;
+      right: 3.5rem;
+      bottom: $bottom-padding;
+      top: $top-padding;
+    }
+  }
+
+  @media screen and (max-width: #{$screen-default}) {
+    padding: {
+      left: 1rem;
+      right: 1rem;
+      bottom: $bottom-padding;
+      top: $top-padding;
+    }
+  }
+
+  @media screen and (max-width: #{$screen-small}) {
+    padding: {
+      left: 1rem;
+      right: 1rem;
+      top: 0;
+      bottom: 0;
+      
+    }
+  }
+}
+
+@mixin dividerMargin($top-margin: 0px, $bottom-margin: 0px) {
+  margin: {
+    left: 6.875rem;
+    right: 6.875rem;
+    bottom: $bottom-margin;
+    top: $top-margin;
+  }
+
+  @media screen and (max-width: #{$screen-large}) {
+    margin: {
+      left: 6.875rem;
+      right: 6.875rem;
+      bottom: $bottom-margin;
+      top: $top-margin;
+    }
+  }
+
+  @media screen and (max-width: #{$screen-medium}) {
+    margin: {
+      left: 3.5rem;
+      right: 3.5rem;
+      bottom: $bottom-margin;
+      top: $top-margin;
+    }
+  }
+
+  @media screen and (max-width: #{$screen-default}) {
+    margin: {
+      left: 1rem;
+      right: 1rem;
+      bottom: $bottom-margin;
+      top: $top-margin;
+    }
+  }
+
+  @media screen and (max-width: #{$screen-small}) {
+    
+  }
+}
+
+
+@mixin tablet {
+  @media (max-width: #{$screen-default}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$screen-small}) {
+    @content;
+  }
+}

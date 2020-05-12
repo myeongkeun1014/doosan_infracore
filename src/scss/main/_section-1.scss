@@ -1,0 +1,164 @@
+section.our_business {
+  
+  max-width: 1632px;
+  margin: 0 auto;
+  
+  @include dividerPadding(8.75rem, 8.75rem);
+  @include mobile { padding-bottom: 8.75rem; };
+
+  article {
+    h1 {
+      font-weight: 700;
+      font-size: 3.5rem;
+      line-height: 3.5rem;
+      margin-bottom: 3.5rem;
+    }
+    p {
+      line-height: 2rem;
+      font-size: 1.125rem;
+    }
+
+    @include mobile { & h1, p { width: 80%; } }
+  }
+
+  .image_wrap {
+    display: flex;
+    
+    @include mobile { display: block; }
+    @include clear;
+
+    .image_container {
+      position: relative; 
+      width: calc(50% - 25px);
+      
+      @include mobile { width: calc(85% - 25px); }
+
+      &:first-child {
+        margin-right: 25px;
+        margin-top: 150px;
+
+        @include mobile { margin-bottom: 2rem; margin-top: 2rem; }
+      }
+      &:last-child {
+        float: right;
+        margin-left: 25px;
+        @include mobile { right: 0; }
+        .description_container {
+          bottom: 150px;
+          @include mobile { bottom: 0; }
+        }
+      }
+      
+      img {
+        width: 100%;
+      }
+
+      .description_container {
+        position: absolute;
+        bottom: 0;
+        padding: 2.875rem 2.5rem;
+        color: white;
+        width: 100%;
+
+        box-sizing: border-box;
+
+        display: flex;
+        align-items: center;
+        
+        &.active {
+          div.hover {
+            width: 80%;
+            @include tablet { width: 100%; }
+          }
+          p {
+            color: #000;
+            transition: color .5s;
+          }
+        }
+        
+        p {
+          position: relative;
+          font-weight: 700;
+          z-index: 1;
+          color: #fff;
+          font-size: 2rem;
+          line-height: 2rem;
+          will-change: color;
+          transition: color .5s;
+        }
+
+        div.hover {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          overflow: hidden;
+
+          position: absolute;
+          left: 0;
+          bottom: 0;
+
+          padding: 2.875rem 0;
+          width: 0%;
+
+          background-color: white;
+          color: #000;
+
+          font-size: 1rem;
+          line-height: 2rem;
+
+          will-change: width;
+          transition: width .5s;
+
+          span {
+            display: inline-flex;
+            align-items: center;
+            margin: 0 1.875rem;
+            min-width: 9rem;
+            cursor: pointer;
+            i {
+              display: inline-flex;
+              align-items: center;
+              margin-left: 10px;
+            }
+            i.icon svg {
+              width: 16px;
+              height: 16px;
+            }
+          }
+
+        }
+
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 1500px) {
+  section.our_business {
+    .image_wrap {
+      .image_container {
+        .description_container {
+          p { margin-top: 1rem; }
+          div.hover {
+            justify-content: flex-start;
+            span {
+              margin: {
+                bottom: -2rem;
+                top: 0; left: 0; right: 0;
+              }
+              padding: {
+                top: 0;
+                bottom: 0;
+                left: 2.5rem;
+                right: 0;
+              }
+            }
+
+          }
+        }
+      }
+    }
+  }
+}
