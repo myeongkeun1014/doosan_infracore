@@ -46,6 +46,20 @@ $(function() {
   });
 
   $(mainSwiperClassName).on('afterChange', function(event, slick, direction) {
+    $('.main_slick_container .slick_items .main_background').each((function(idx, element) {
+      const videoElement = $(element).find('video').get(0);
+      if (!videoElement) {
+        return;
+      }
+
+
+      if (idx === direction) {
+        videoElement.play();
+      } else {
+        videoElement.currentTime = 0;
+        videoElement.pause();
+      }
+    }));
     $('.main_slick_container .navigation_item').each(function(idx) {
       if (idx === direction) {
         $(this).addClass('active');
